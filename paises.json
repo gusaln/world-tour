@@ -1,0 +1,146 @@
+[
+  {
+    "id": "862",
+    "nombre": "Venezuela",
+    "numeroHabitantes": 30518260,
+    "supercifie": 916445,
+    "capital": "Caracas",
+    "lenguaje": "Castellano",
+    "gentilicio": [
+      "Venezolano",
+      "Venezolana"
+    ]
+  },
+  {
+    "id": "120",
+    "nombre": "Camerun",
+    "numeroHabitantes": 28647292,
+    "superficie": 466050,
+    "capital": "Yaunde",
+    "lenguaje": [
+      "Frances",
+      "Ingles"
+    ],
+    "gentilicio": [
+      "Camerunes",
+      "Camerunesa"
+    ]
+  },
+  {
+    "id": "504",
+    "nombre": "Marruecos",
+    "numeroHabitantes": 37840052,
+    "superficie": 446550,
+    "capital": "Rabat",
+    "lenguaje": [
+      "Arabe",
+      "Bereber"
+    ],
+    "gentilicio": [
+      "Marroqui",
+      "Marroquin",
+      "Marroquina"
+    ]
+  },
+  {
+    "id": "032",
+    "nombre": "Argentina",
+    "numeroHabitantes": 46044703,
+    "superficie": 2780400,
+    "capital": "Buenos Aires",
+    "lenguaje": "Castellano",
+    "gentilicio": [
+      "Argentino",
+      "Argentina"
+    ]
+  },
+  {
+    "id": "076",
+    "nombre": "Brasil",
+    "numeroHabitantes": 203062512,
+    "superficie": 8515770,
+    "capital": "Brasilia",
+    "lenguaje": "Portugues",
+    "gentilicio": [
+      "Brasileño",
+      "Brasileña",
+      "Brasilero",
+      "Brasilera"
+    ]
+  },
+  {
+    "id": "682",
+    "nombre": "Reino de Arabia Saudita",
+    "numeroHabitantes": 36947024,
+    "superficie": 2149690,
+    "capital": "Riad",
+    "lenguaje": "Arabe",
+    "gentilicio": [
+      "Saudi",
+      "Saudita"
+    ]
+  },
+  {
+    "id": "376",
+    "nombre": "Israel",
+    "numeroHabitantes": 8914885,
+    "superficie": 22145,
+    "capital": "Jerusalen",
+    "lenguaje": [
+      "Hebreo",
+      "Arabe"
+    ],
+    "gentilicio": "Israeli"
+  },
+  {
+    "id": "276",
+    "nombre": "Alemania",
+    "numeroHabitantes": 84270625,
+    "superficie": 357375.62,
+    "capital": "Berlin",
+    "lenguaje": "Aleman",
+    "gentilicio": [
+      "Aleman",
+      "Alemana"
+    ]
+  },
+  {
+    "id": "380",
+    "nombre": "Italia",
+    "numeroHabitantes": 58870764,
+    "superficie": 301340,
+    "capital": "Roma",
+    "lenguaje": "Italiano",
+    "gentilicio": [
+      "Italiano",
+      "Italiana"
+    ]
+  },
+  {
+    "id": "036",
+    "nombre": "Australia",
+    "numeroHabitantes": 26020805,
+    "superficie": 7741220,
+    "capital": "Canberra",
+    "lenguaje": "Ingles",
+    "gentilicio": [
+      "Australiano",
+      "Australiana"
+    ]
+  },
+  {
+    "id": "554",
+    "nombre": "Nueva Zelanda",
+    "numeroHabitantes": 5006020,
+    "superficie": 268838,
+    "capital": "Wellington",
+    "lenguaje": [
+      "Ingles",
+      "Maori"
+    ],
+    "gentilicio": [
+      "Neozelandes",
+      "Neozelandesa"
+    ]
+  }
+]

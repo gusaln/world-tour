@@ -19,11 +19,16 @@
             /* background-color: gray; */
         }
 
+        h1 {
+            margin-top: -0.1em;
+            margin-bottom: 1.5em;
+        }
+
         .container {
             background-color: black;
 
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 2fr 3fr;
             gap: 16px;
 
             width: 100vw;
@@ -31,7 +36,7 @@
         }
 
         .canvas-container {
-            background-color: gray;
+            /* background-color: gray; */
 
             display: flex;
             justify-content: center;
@@ -47,29 +52,67 @@
         }
 
         .dashboard-container {
-            background-color: gray;
+            /* background-color: gray; */
 
             /* display: flex; */
             /* justify-content: center; */
-            /* width: 100%; */
+            width: 100%;
             height: 100%;
+        }
 
-            padding: 12px;
+        .dashboard-container > *:not(:last-child) {
+            margin-bottom: 36px;
+        }
+
+
+        .dashboard,.info {
+            width: 80%;
+
+            margin: auto;
+            padding: 1.5rem 2rem;
+            border-radius: 4px;
         }
 
         .dashboard {
-            /* height: 60%; */
+            margin-top: 36px;
+            background-color: #3b68bb;
+        }
 
-            margin: auto;
-            padding: 1.25rem 2rem;
+        .form-input {
+            display: flex;
+            flex-direction: column;
 
-            background-color: cornflowerblue;
-            border-radius: 16px;
+            margin-bottom: 1rem;
+        }
+
+        .form-input label {
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .form-input select {
+            padding: 0.5rem 0.75rem;
+
+            background-color: rgb(98, 141, 221);
+            border-radius: 2px;
+            border-width: 0px;
+        }
+
+        .info {
+            transition: all 500ms ease-in-out;
+            opacity: 1;
+
+            background-color: #DE9408;
+            /* border: 2px solid #DE9408; */
+        }
+
+        .hidden {
+            opacity: 0;
         }
     </style>
 
     <!-- <script src="d3.v7.min.js"></script> -->
-    
+
     <script src="https://unpkg.com/d3@7"></script>
     <script src="https://unpkg.com/topojson@3"></script>
 </head>
@@ -78,7 +121,16 @@
     <div class="container">
         <div class="dashboard-container">
             <div class="dashboard">
-                <select name="country" id="country"></select>
+                <h1>Tour por el mundo</h1>
+
+                <div class="form-input">
+                    <label for="country">Seleccione un país</label>
+                    <select name="country" id="country"></select>
+                </div>
+            </div>
+
+            <div class="info hidden">
+                INFOOOOOOOOOOOOOOOOOOOOOO
             </div>
         </div>
 
