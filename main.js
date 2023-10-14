@@ -74,7 +74,7 @@ const numberFormatter = Intl.NumberFormat("es-VE")
 
 const VenezuelaId = "862"
 const PaisOrigenIdId = VenezuelaId
-const PaisShowcaseTime = 5 * 1000;
+const PaisShowcaseTime = 20 * 1000;
 // Ángulo respecto a la normal del visor
 // Original 20 grados
 const Tilt = 10;
@@ -117,8 +117,7 @@ async function setupCanvas(land, borders, countries, paisesSeleccionados) {
 
   // Create a projection and a path generator.
   const projection = d3.geoOrthographic().fitExtent([[10, 10], [width - 10, height - 10]], { type: "Sphere" });
-  const path = d3.geoPath(projection, context);
-  // const tilt = Tilt;
+  const dibujarEnLaEsfera = d3.geoPath(projection, context);
 
   function renderCountryName(country) {
     context.beginPath(), context.font = "12pt serif", context.fillStyle = "#000", context.fillText(country.properties.name, width / 2, height / 2)
@@ -130,25 +129,25 @@ async function setupCanvas(land, borders, countries, paisesSeleccionados) {
     context.fillStyle = MapaSpaceColor, context.fillRect(0, 0, width, height);
 
     // water
-    context.beginPath(), path({ type: "Sphere" }), context.fillStyle = MapaOceanoColor, context.fill();
+    context.beginPath(), dibujarEnLaEsfera({ type: "Sphere" }), context.fillStyle = MapaOceanoColor, context.fill();
 
     // land
-    context.beginPath(), path(land), context.fillStyle = MapaTierraColor, context.fill();
+    context.beginPath(), dibujarEnLaEsfera(land), context.fillStyle = MapaTierraColor, context.fill();
 
     // país seleccionado (de haber uno)
     if (country) {
-      context.beginPath(), path(country), context.fillStyle = MapaPaisSeleccionadoColor, context.fill();
+      context.beginPath(), dibujarEnLaEsfera(country), context.fillStyle = MapaPaisSeleccionadoColor, context.fill();
       // renderCountryName(country);
     }
 
     // bordes de países
-    context.beginPath(), path(borders), context.strokeStyle = MapaBordesColor, context.lineWidth = 0.5, context.stroke();
+    context.beginPath(), dibujarEnLaEsfera(borders), context.strokeStyle = MapaBordesColor, context.lineWidth = 0.5, context.stroke();
 
     // borde de la esfera
     // context.beginPath(), path({ type: "Sphere" }), context.strokeStyle = MapaEsferaContornoColor, context.lineWidth = 1.5, context.stroke();
 
     // línea de recorrido
-    context.beginPath(), path(arc), context.strokeStyle = MapaTravelLineColor, context.lineWidth = MapaTravelLineWidth, context.stroke();
+    context.beginPath(), dibujarEnLaEsfera(arc), context.strokeStyle = MapaTravelLineColor, context.lineWidth = MapaTravelLineWidth, context.stroke();
 
     return context.canvas;
   }
