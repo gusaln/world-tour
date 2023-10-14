@@ -2,10 +2,11 @@
   {
     "id": "862",
     "nombre": "Venezuela",
+    "bandera": "Venezuela",
     "numeroHabitantes": 30518260,
-    "supercifie": 916445,
+    "superficie": 916445,
     "capital": "Caracas",
-    "lenguaje": "Castellano",
+    "lenguajes": ["Castellano"],
     "gentilicio": [
       "Venezolano",
       "Venezolana"
@@ -13,11 +14,12 @@
   },
   {
     "id": "120",
-    "nombre": "Camerun",
+    "nombre": "Camerún",
+    "bandera": "Camerun",
     "numeroHabitantes": 28647292,
     "superficie": 466050,
     "capital": "Yaunde",
-    "lenguaje": [
+    "lenguajes": [
       "Frances",
       "Ingles"
     ],
@@ -29,15 +31,16 @@
   {
     "id": "504",
     "nombre": "Marruecos",
+    "bandera": "Marruecos",
     "numeroHabitantes": 37840052,
     "superficie": 446550,
     "capital": "Rabat",
-    "lenguaje": [
-      "Arabe",
+    "lenguajes": [
+      "Árabe",
       "Bereber"
     ],
     "gentilicio": [
-      "Marroqui",
+      "Marroquí",
       "Marroquin",
       "Marroquina"
     ]
@@ -45,10 +48,11 @@
   {
     "id": "032",
     "nombre": "Argentina",
+    "bandera": "Argentina",
     "numeroHabitantes": 46044703,
     "superficie": 2780400,
     "capital": "Buenos Aires",
-    "lenguaje": "Castellano",
+    "lenguajes": ["Castellano"],
     "gentilicio": [
       "Argentino",
       "Argentina"
@@ -57,10 +61,11 @@
   {
     "id": "076",
     "nombre": "Brasil",
+    "bandera": "Brasil",
     "numeroHabitantes": 203062512,
     "superficie": 8515770,
     "capital": "Brasilia",
-    "lenguaje": "Portugues",
+    "lenguajes": ["Portugues"],
     "gentilicio": [
       "Brasileño",
       "Brasileña",
@@ -71,10 +76,11 @@
   {
     "id": "682",
     "nombre": "Reino de Arabia Saudita",
+    "bandera": "Reino de Arabia Saudita",
     "numeroHabitantes": 36947024,
     "superficie": 2149690,
     "capital": "Riad",
-    "lenguaje": "Arabe",
+    "lenguajes": ["Árabe"],
     "gentilicio": [
       "Saudi",
       "Saudita"
@@ -83,34 +89,37 @@
   {
     "id": "376",
     "nombre": "Israel",
+    "bandera": "Israel",
     "numeroHabitantes": 8914885,
     "superficie": 22145,
     "capital": "Jerusalen",
-    "lenguaje": [
+    "lenguajes": [
       "Hebreo",
-      "Arabe"
+      "Árabe"
     ],
-    "gentilicio": "Israeli"
+    "gentilicio": ["Israeli"]
   },
   {
     "id": "276",
     "nombre": "Alemania",
+    "bandera": "Alemania",
     "numeroHabitantes": 84270625,
     "superficie": 357375.62,
     "capital": "Berlin",
-    "lenguaje": "Aleman",
+    "lenguajes": ["Alemán"],
     "gentilicio": [
-      "Aleman",
+      "Alemán",
       "Alemana"
     ]
   },
   {
     "id": "380",
     "nombre": "Italia",
+    "bandera": "Italia",
     "numeroHabitantes": 58870764,
     "superficie": 301340,
     "capital": "Roma",
-    "lenguaje": "Italiano",
+    "lenguajes": ["Italiano"],
     "gentilicio": [
       "Italiano",
       "Italiana"
@@ -119,10 +128,11 @@
   {
     "id": "036",
     "nombre": "Australia",
+    "bandera": "Australia",
     "numeroHabitantes": 26020805,
     "superficie": 7741220,
     "capital": "Canberra",
-    "lenguaje": "Ingles",
+    "lenguajes": ["Ingles"],
     "gentilicio": [
       "Australiano",
       "Australiana"
@@ -131,15 +141,16 @@
   {
     "id": "554",
     "nombre": "Nueva Zelanda",
+    "bandera": "NuevaZelanda",
     "numeroHabitantes": 5006020,
     "superficie": 268838,
     "capital": "Wellington",
-    "lenguaje": [
+    "lenguajes": [
       "Ingles",
       "Maori"
     ],
     "gentilicio": [
-      "Neozelandes",
+      "Neozelandés",
       "Neozelandesa"
     ]
   }

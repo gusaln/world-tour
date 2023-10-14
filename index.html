@@ -13,6 +13,7 @@
             padding: 0;
 
             font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
         }
 
         html {
@@ -20,6 +21,15 @@
         }
 
         h1 {
+            font-size: 2rem;
+
+            margin-top: -0.1em;
+            margin-bottom: 1.5em;
+        }
+
+        h3 {
+            font-size: 1rem;
+
             margin-top: -0.1em;
             margin-bottom: 1.5em;
         }
@@ -28,27 +38,31 @@
             background-color: black;
 
             display: grid;
-            grid-template-columns: 2fr 3fr;
-            gap: 16px;
+            grid-template-columns: 2fr 2fr;
+            gap: 8px;
 
             width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
+            /* height: 100vh; */
         }
 
         .canvas-container {
             /* background-color: gray; */
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            padding-top: 20vh;
 
             height: 100%;
         }
 
         canvas {
-            background-color: whitesmoke;
+            /* outline: 3px salmon dotted; */
 
-            outline: 3px salmon dotted;
+            width: 100%;
+            margin: auto;
+            /* background-color: black; */
         }
 
         .dashboard-container {
@@ -58,19 +72,22 @@
             /* justify-content: center; */
             width: 100%;
             height: 100%;
+
+            padding-bottom: 1.5rem;
         }
 
-        .dashboard-container > *:not(:last-child) {
-            margin-bottom: 36px;
+        .dashboard-container>*:not(:last-child) {
+            margin-bottom: 1.5rem;
         }
 
 
-        .dashboard,.info {
-            width: 80%;
+        .dashboard,
+        .info {
+            width: 95%;
 
             margin: auto;
-            padding: 1.5rem 2rem;
-            border-radius: 4px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2px;
         }
 
         .dashboard {
@@ -109,12 +126,75 @@
         .hidden {
             opacity: 0;
         }
+
+        dt,
+        dd {
+            display: block;
+        }
+
+        dt {
+            font-size: 0.90rem;
+            font-weight: 500;
+        }
+
+        dt:not(:last-child) {
+            margin-bottom: 0.20rem;
+        }
+
+        dd {
+            padding-left: 0.70rem;
+        }
+
+        dd:not(:last-child) {
+            margin-bottom: 0.85rem;
+        }
+
+        .bandera-wrapper {
+            display: flex;
+            justify-content: center;
+
+            margin-top: 16px;
+            padding: 0 4px;
+        }
+
+        .bandera {
+            width: 256px;
+            border: 2px black solid;
+        }
+
+
+        @media screen and (min-width: 1024px) {
+            * {
+                font-size: 16px;
+            }
+
+            .container {
+                grid-template-columns: 1fr 2fr;
+                gap: 16px;
+            }
+
+            .dashboard,
+            .info {
+                width: 80%;
+                padding: 1.5rem 2rem;
+                border-radius: 4px;
+            }
+
+            .canvas-container {
+                padding-top: 10vh;
+            }
+
+            canvas {
+            width: 90%;
+        }
+        }
     </style>
 
-    <!-- <script src="d3.v7.min.js"></script> -->
+    <script src="d3.min.js"></script>
+    <script src="topojson.js"></script>
 
-    <script src="https://unpkg.com/d3@7"></script>
-    <script src="https://unpkg.com/topojson@3"></script>
+    <!-- <script src="https://unpkg.com/d3@7"></script> -->
+    <!-- <script src="https://unpkg.com/topojson@3"></script> -->
 </head>
 
 <body>
@@ -130,7 +210,23 @@
             </div>
 
             <div class="info hidden">
-                INFOOOOOOOOOOOOOOOOOOOOOO
+                <h3>Venezuela</h3>
+                <dl>
+                    <dt>Superficie</dt>
+                    <dd>${paisInfo.superficie} km<sup>2</sup></dd>
+                    <dt>Habitantes</dt>
+                    <dd>${paisInfo.numeroHabitantes}</dd>
+                    <dt>Capital</dt>
+                    <dd>${paisInfo.capital}</dd>
+                    <dt>Lenguaje(s)</dt>
+                    <dd>${paisInfo.lenguajes.join(', ')}</dd>
+                    <dt>Gentilicio(s)</dt>
+                    <dd>${paisInfo.gentilicio.join(', ')}</dd>
+                </dl>
+
+                <div class="bandera-wrapper">
+                    <img class="bandera" src="banderas/Band_Venezuela.sd.png" alt="Bandera de Venezuela">
+                </div>
             </div>
         </div>
 

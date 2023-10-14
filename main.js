@@ -70,6 +70,7 @@ class Versor {
   }
 }
 
+const numberFormatter = Intl.NumberFormat("es-VE")
 
 const VenezuelaId = "862"
 const PaisOrigenIdId = VenezuelaId
@@ -100,11 +101,15 @@ let height = Math.min(width, 720);
 async function setupCanvas(land, borders, countries, paisesSeleccionados) {
   // Prepare a canvas.
   const dpr = window.devicePixelRatio ?? 1;
-  const canvas = d3.select("canvas")
+
+
+  /** @type {HTMLCanvasElement} */
+  const canvas = d3.select("canvas");
+
+  canvas
     .attr("width", dpr * width)
     .attr("height", dpr * height)
-    .style("width", `${width}px`);
-
+    // .style("width", `${width}px`)
 
   /** @type {CanvasRenderingContext2D} */
   const context = canvas.node().getContext("2d");
@@ -196,6 +201,21 @@ async function setupCanvas(land, borders, countries, paisesSeleccionados) {
       selectEl.appendChild(countryOption)
     });
 
+  function renderInfo(paisId) {
+    const paisInfo = paisesSeleccionadosMap[paisId]
+
+    infoEl.innerHTML = `<h3>${paisInfo.nombre}</h3>
+      <dl>
+      <dt>Superficie</dt><dd>${numberFormatter.format(paisInfo.superficie)} km<sup>2</sup></dd>
+      <dt>Habitantes</dt><dd>${numberFormatter.format(paisInfo.numeroHabitantes)}</dd>
+      <dt>Capital</dt><dd>${paisInfo.capital}</dd>
+      <dt>Lenguaje(s)</dt><dd>${paisInfo.lenguajes.join(', ')}</dd>
+      <dt>Gentilicio(s)</dt><dd>${paisInfo.gentilicio.join(', ')}</dd>
+      </dl>
+  
+      <div class="bandera-wrapper"><img class="bandera" src="banderas/Band_${paisInfo.bandera}.sd.png" alt="Bandera de ${paisInfo.nombre}"></div>`
+  }
+
   // Primer render del mapa
   (function () {
     const paisOrigen = countriesMap[PaisOrigenIdId]
@@ -205,6 +225,7 @@ async function setupCanvas(land, borders, countries, paisesSeleccionados) {
     // El mapa se crea con un centro no adecuado. Debemos rotarlo al sitio adecuado.
     projection.rotate(r2)
     render(paisOrigen)
+    renderInfo(PaisOrigenIdId)
   })()
 
   selectEl.value = PaisOrigenIdId
@@ -215,7 +236,7 @@ async function setupCanvas(land, borders, countries, paisesSeleccionados) {
     selectEl.ariaReadOnly = true;
 
     travel(countriesMap[selectEl.value]).then(() => {
-      infoEl.innerHTML = "<pre>" + JSON.stringify(paisesSeleccionadosMap[selectEl.value], null, 2) + "</pre>"
+      renderInfo(selectEl.value)
       infoEl.classList.remove("hidden");
 
       return sleep(PaisShowcaseTime)
@@ -226,7 +247,7 @@ async function setupCanvas(land, borders, countries, paisesSeleccionados) {
         // Esperamos a que termine de ocurrir el efecto de transición
         return sleep(500)
       })
-      .then(() => {  
+      .then(() => {
         selectEl.value = PaisOrigenIdId
 
         return travel(countriesMap[PaisOrigenIdId])
@@ -237,6 +258,11 @@ async function setupCanvas(land, borders, countries, paisesSeleccionados) {
       })
       .catch(err => console.error(err))
   })
+
+  // window.addEventListener('resize', function() {
+  //   console.log("resize")
+  //   render()
+  // })
 }
 
 // const selectEl = null
